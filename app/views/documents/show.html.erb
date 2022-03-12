@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @document.attachment %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @document.user_id %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @document.public %>
+</p>
+
+<p>
+  <strong>File path:</strong>
+  <%= @document.file_path %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

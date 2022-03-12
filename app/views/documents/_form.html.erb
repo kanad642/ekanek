@@ -1,0 +1,35 @@
+<div class="container form">
+<%= form_with(model: document, local: true) do |form| %>
+  <% if document.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :document_name %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment, id: :document_attachment %>
+  </div>
+
+  <div class="field form-group form-check">
+    <%= form.label :public %>
+    <%= form.check_box :public, id: :document_public %>
+  </div>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+  </div>
+
+   <%= form.submit%>
+<% end %>
+
+<div>
